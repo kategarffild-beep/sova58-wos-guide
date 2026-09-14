@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Пингвинья вечеринка — полный гайд по всем активностям</title>
+<style>
+:root {
+  --sky:#dff2ff;
+  --sky2:#cbe7fb;
+  --ice:#f8fcff;
+  --blue:#2f79bc;
+  --blue2:#4fa1df;
+  --deep:#0f4f86;
+  --text:#17344f;
+  --muted:#54718a;
+  --white:#fff;
+  --shadow:0 16px 40px rgba(42,99,145,.18);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,.95), transparent 28%),
+    linear-gradient(180deg,#9dd2f4 0%,#dff2ff 18%,#eaf7ff 100%);
+}
+a{color:inherit;text-decoration:none}
+.page{max-width:1160px;margin:0 auto;padding:20px 18px 56px}
+.topbar{
+  position:sticky;top:0;z-index:40;
+  margin:0 auto 18px;
+  background:rgba(235,248,255,.92);
+  border:2px solid rgba(255,255,255,.8);
+  box-shadow:0 10px 24px rgba(58,116,158,.14);
+  backdrop-filter:blur(12px);
+  border-radius:0 0 22px 22px;
+}
+.topbar-inner{
+  max-width:1160px;margin:auto;padding:12px 18px;
+  display:flex;gap:10px;align-items:center;overflow:auto;
+}
+.brand{font-weight:900;color:var(--deep);white-space:nowrap;margin-right:auto}
+.navpill{
+  padding:8px 12px;border-radius:999px;
+  background:#fff;border:1px solid #a9d3ef;
+  color:var(--deep);font-size:14px;font-weight:700;white-space:nowrap;
+}
+.hero{
+  position:relative;overflow:hidden;
+  border-radius:30px;
+  padding:34px 30px;
+  color:white;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(255,255,255,.25), transparent 18%),
+    linear-gradient(135deg,#1e5f98 0%,#347fbe 52%,#6ab5ea 100%);
+  box-shadow:var(--shadow);
+  border:3px solid rgba(255,255,255,.72);
+}
+.hero:after{
+  content:"";
+  position:absolute;inset:auto -80px -120px auto;
+  width:340px;height:340px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+}
+.kicker{
+  display:inline-block;padding:7px 13px;border-radius:999px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);
+  font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+}
+h1{font-size:clamp(42px,7vw,82px);line-height:.98;margin:12px 0 14px;text-shadow:0 3px 0 rgba(14,69,111,.18)}
+.hero p{max-width:760px;font-size:19px;line-height:1.55;color:#eff9ff}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.meta span{
+  background:#fff;color:var(--deep);padding:9px 13px;border-radius:999px;
+  font-weight:800;border:1px solid rgba(255,255,255,.7);
+}
+.section{
+  margin-top:22px;
+  background:rgba(248,252,255,.96);
+  border:2px solid rgba(108,171,214,.45);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.section-head{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 18px;
+  background:linear-gradient(90deg,#2e79bb 0%,#4fa0dd 100%);
+  color:white;
+}
+.section-icon{
+  width:40px;height:40px;border-radius:13px;
+  background:rgba(255,255,255,.18);
+  display:grid;place-items:center;font-size:22px;font-weight:900;
+  border:1px solid rgba(255,255,255,.35);
+}
+.section-head h2{margin:0;font-size:clamp(22px,3vw,34px)}
+.section-body{padding:20px}
+.intro-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}
+.soft-card{
+  background:linear-gradient(180deg,#f7fcff,#e8f5ff);
+  border:1px solid #c5e2f4;
+  border-radius:18px;padding:18px;
+}
+.soft-card h3{margin:0 0 8px;color:var(--deep)}
+.mail img{width:100%;display:block;border-radius:16px;border:1px solid #bfdcf0}
+.items{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.item-card{
+  text-align:center;
+  background:linear-gradient(180deg,#fff,#edf8ff);
+  border:1px solid #b9d9ee;
+  border-radius:20px;
+  padding:16px;
+}
+.item-card img{
+  width:140px;height:140px;object-fit:contain;
+  display:block;margin:0 auto 12px;
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 8px 18px rgba(59,119,161,.14);
+}
+.item-card h3{margin:4px 0 6px;color:var(--deep)}
+.item-card p{margin:0;color:var(--muted)}
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+.event-card{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  min-height:108px;
+  padding:16px;
+  border-radius:18px;
+  background:linear-gradient(180deg,#f8fcff,#e4f4ff);
+  border:1px solid #b9d9ee;
+  box-shadow:0 8px 18px rgba(59,119,161,.10);
+}
+.event-card b{color:var(--deep);font-size:17px}
+.event-card span{color:var(--muted);font-size:14px}
+.event-card:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(59,119,161,.16)}
+@media(max-width:900px){.event-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.event-grid{grid-template-columns:1fr}}
+
+.stage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stage-card{
+  background:linear-gradient(180deg,#eaf7ff,#d8eefc);
+  border:1px solid #b3d6ec;
+  border-radius:18px;padding:16px;
+}
+.stage-card h3{
+  margin:0 0 8px;color:white;
+  background:linear-gradient(90deg,#4aa7df,#2879bb);
+  border-radius:12px;padding:9px 12px;
+}
+.stage-card p{margin:0;color:#395b73}
+.steps{counter-reset:s}
+.step{
+  position:relative;padding-left:52px;margin:14px 0;
+}
+.step:before{
+  counter-increment:s;content:counter(s);
+  position:absolute;left:0;top:0;
+  width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;
+  background:linear-gradient(180deg,#54a9df,#2e79bb);
+  color:white;font-weight:900;
+  box-shadow:0 6px 12px rgba(46,121,187,.22);
+}
+.tips{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px 22px;
+}
+.tip{
+  display:flex;gap:10px;align-items:flex-start;
+  padding:11px 12px;border-radius:14px;
+  background:#eef8ff;border:1px solid #cbe4f4;
+}
+.check{
+  flex:0 0 26px;width:26px;height:26px;border-radius:50%;
+  display:grid;place-items:center;background:#22b94c;color:white;font-weight:900;
+}
+.highlight{
+  font-weight:900;color:#0f4f86;
+  background:#d9efff;border:1px solid #9bcbe9;
+  border-radius:8px;padding:1px 7px;
+}
+.footer{
+  margin-top:24px;text-align:center;
+  color:white;
+  background:linear-gradient(135deg,#2b6fa8,#5cabdf);
+  border-radius:24px;padding:24px;
+  border:2px solid rgba(255,255,255,.72);
+  box-shadow:var(--shadow);
+}
+.footer strong{font-size:24px}
+@media(max-width:900px){
+  .intro-grid,.dual{grid-template-columns:1fr}
+  .stage-grid{grid-template-columns:repeat(2,1fr)}
+  .items{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  .page{padding:12px 10px 40px}
+  .hero{padding:26px 20px}
+  .stage-grid,.tips{grid-template-columns:1fr}
+  .section-body{padding:14px}
+}
+
+.example-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:18px;
+}
+.example-card{
+  background:linear-gradient(180deg,#f8fcff,#e7f5ff);
+  border:1px solid #b8d8ec;
+  border-radius:18px;
+  padding:14px;
+}
+.example-card img{
+  width:100%;
+  display:block;
+  border-radius:16px;
+  border:1px solid #bdd8ea;
+  cursor:zoom-in;
+}
+.example-card h3{
+  margin:0 0 10px;
+  color:var(--deep);
+}
+@media(max-width:900px){
+  .example-gallery{grid-template-columns:1fr}
+}
+
+
+
+.hero-title-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.hero-title-row h1{
+  flex:1 1 auto;
+}
+.hero-stamp{
+  flex:0 0 auto;
+  width:220px;
+  height:auto;
+  object-fit:contain;
+  position:relative;
+  z-index:2;
+  filter:drop-shadow(0 8px 14px rgba(9,50,86,.28));
+}
+@media(max-width:760px){
+  .hero-title-row{gap:12px}
+  .hero-stamp{width:130px}
+}
+</style>
+<style>
+.img-modal{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.88);padding:24px;
+  align-items:center;justify-content:center;
+}
+.img-modal.show{display:flex}
+.img-modal img{max-width:96vw;max-height:92vh;border-radius:14px}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="topbar-inner">
+<div class="brand">🐧 Пингвинья вечеринка</div>
+<a class="navpill" href="#about">Обзор</a>
+<a class="navpill" href="#items">Предметы</a>
+<a class="navpill" href="#all-events">Все активности</a>
+<a class="navpill" href="#park">Парк пингвинов</a>
+<a class="navpill" href="#ice-blast">Ледяной взрыв</a>
+<a class="navpill" href="#party-pro">Профи вечеринок</a>
+<a class="navpill" href="#fantasy">Фантазийная симфония</a>
+<a class="navpill" href="#shop">Магазин</a>
+<a class="navpill" href="#loot">Потерянная добыча</a>
+<a class="navpill" href="#tips">Советы</a>
+</div>
+</div>
+<div class="page">
+<section class="hero">
+<span class="kicker">Whiteout Survival</span>
+<div class="hero-title-row"><h1>Пингвинья вечеринка</h1><img alt="Автор Sova" class="hero-stamp" src="assets/sova_stamp.png"/></div>
+<p>Кратко по всем активностям события: что делать, что тратить и где забирать награды.</p>
+<div class="meta">
+<span>15–21 сентября 2026</span>
+<span>Потерянная добыча: 16–18 сентября</span>
+<span>Магазин до 22 сентября</span>
+<span>Автор — Sova</span>
+</div>
+</section>
+<section class="section" id="about">
+<div class="section-head">
+<div class="section-icon">i</div>
+<h2>Общая информация</h2>
+</div>
+<div class="section-body intro-grid">
+<div class="soft-card">
+<h3>Коротко</h3>
+<p>Событие состоит из нескольких активностей. Даты и время смотрите в письме справа.</p>
+</div>
+<div class="soft-card mail">
+<img alt="Письмо события" src="assets/event_mail.jpg" style="width:100%;max-width:340px;height:auto;margin:0 auto;display:block;border-radius:16px;border:1px solid #bfdcf0"/>
+</div>
+</div>
+</section>
+<section class="section" id="items">
+<div class="section-head">
+<div class="section-icon">▣</div>
+<h2>Основные предметы события</h2>
+</div>
+<div class="section-body">
+<div class="items">
+<div class="item-card">
+<img alt="Пингвинья монета" src="assets/penguin_coin.png" style="width:100px;height:100px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:18px;background:#fff"/>
+<h3>Пингвинья монета</h3>
+<p>Получаем в Парке пингвинов и тратим в Пингвиньем магазине.</p>
+</div>
+<div class="item-card">
+<img alt="Снежная лопата" src="assets/snow_shovel.png" style="width:100px;height:100px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:18px;background:#fff"/>
+<h3>Снежная лопата</h3>
+<p>Используется для открытия клеток в Потерянной добыче.</p>
+</div>
+<div class="item-card">
+<img alt="Ледяной шарик" src="assets/ice_orb.png" style="width:100px;height:100px;object-fit:contain;display:block;margin:0 auto 10px;border-radius:18px;background:#fff"/>
+<h3>Ледяной шарик</h3>
+<p>Запускаем в Парке пингвинов, чтобы получать Пингвиньи монеты.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="all-events">
+<div class="section-head">
+<div class="section-icon">✦</div>
+<h2>Все активности «Пингвиньей вечеринки»</h2>
+</div>
+<div class="section-body">
+<div class="event-grid">
+<a class="event-card" href="#park"><b>🐧 Парк пингвинов</b><span>Ледяные шарики → Пингвиньи монеты</span></a>
+<a class="event-card" href="#ice-blast"><b>💥 Ледяной взрыв</b><span>Задания и дополнительные награды</span></a>
+<a class="event-card" href="#party-pro"><b>🏆 Профи вечеринок</b><span>Многодневные задания и рейтинг</span></a>
+<a class="event-card" href="#fantasy"><b>🎼 Фантазийная симфония</b><span>Закрываем линии и получаем награды</span></a>
+<a class="event-card" href="#recharge"><b>💎 Преимущества пополнения</b><span>Награды за пополнение</span></a>
+<a class="event-card" href="#greetings"><b>🎁 Цветастые приветствия</b><span>Платные наборы события</span></a>
+<a class="event-card" href="#shop"><b>🛒 Пингвиний магазин</b><span>Тратим Пингвиньи монеты</span></a>
+<a class="event-card" href="#loot"><b>⛏️ Потерянная добыча</b><span>Ищем предметы и экономим лопаты</span></a>
+</div>
+</div>
+</section>
+<section class="section" id="park">
+<div class="section-head">
+<div class="section-icon">🐧</div>
+<h2>Парк пингвинов</h2>
+</div>
+<div class="section-body dual">
+<div class="soft-card">
+<h3>Как работает</h3>
+<p>Тратим ледяные шарики. Выбираем одного из 3 пингвинов и запускаем шарик.</p>
+</div>
+<div class="soft-card">
+<h3>Что получаем</h3>
+<p>Получаем Пингвиньи монеты и тратим их в магазине.</p>
+</div>
+</div>
+<div class="soft-card" style="margin-top:18px;text-align:center"><h3>Пример игрового поля</h3><img alt="Парк пингвинов — пример игрового поля" src="assets/penguin_park.jpg" style="width:100%;max-width:300px;height:auto;margin:0 auto;display:block;border-radius:16px;border:1px solid #bdd8ea"/></div></section>
+<section class="section" id="ice-blast">
+<div class="section-head">
+<div class="section-icon">💥</div>
+<h2>Ледяной взрыв</h2>
+</div>
+<div class="section-body dual">
+<div class="soft-card">
+<h3>Что нужно делать</h3>
+<p>Закрываем ежедневные задания и сразу забираем награды.</p>
+</div>
+<div class="soft-card">
+<h3>Бесплатная и платная часть</h3>
+<p>Платные вкладки необязательны.</p>
+</div>
+<figure style="margin:18px auto 8px;text-align:center"><h3>Пример игрового окна</h3><img alt="Ледяной взрыв — пример игрового окна" src="assets/ice_bomb_frenzy.jpg" style="width:100%;max-width:320px;height:auto;display:block;margin:12px auto 0;border-radius:16px;border:1px solid #bdd8ea"/><figcaption style="margin-top:10px;color:#4b6a86">Пример: окно события «Ледяной взрыв»</figcaption></figure></div>
+</section>
+<section class="section" id="party-pro">
+<div class="section-head">
+<div class="section-icon">🏆</div>
+<h2>Профи вечеринок</h2>
+</div>
+<div class="section-body">
+<p>Многодневные задания: набираем очки, забираем этапные награды и участвуем в рейтинге.</p>
+<div class="dual">
+<div class="soft-card">
+<h3>Какие задания встречаются</h3>
+<p>Сила, фрагменты героев, войска, ускорения, снаряжение и другие обычные активности.</p>
+</div>
+<div class="soft-card">
+<h3>Как играть выгоднее</h3>
+<p>Не тратьте редкие ресурсы заранее. Сначала смотрите задания текущего дня.</p>
+</div>
+</div>
+<figure style="margin:18px auto 8px;text-align:center"><h3>Пример игрового окна</h3><img alt="Профи вечеринок — пример игрового окна" src="assets/party_expert.jpg" style="width:100%;max-width:340px;height:auto;margin:12px auto 0;display:block;border-radius:16px;border:1px solid #bdd8ea"/><figcaption style="margin-top:10px;color:#4b6a86">Пример: окно события «Профи вечеринок»</figcaption></figure></div>
+</section>
+<section class="section" id="fantasy">
+<div class="section-head">
+<div class="section-icon">🎼</div>
+<h2>Фантазийная симфония</h2>
+</div>
+<div class="section-body dual">
+<div class="soft-card">
+<h3>Механика</h3>
+<p>Выполняем задания и закрываем горизонтальные и вертикальные линии.</p>
+</div>
+<div class="soft-card">
+<h3>За что дают награды</h3>
+<p>Награды идут за задания и закрытые линии.</p>
+</div>
+</div>
+<div class="soft-card" style="margin-top:18px">
+<h3>Пример игрового поля</h3>
+<img alt="Фантазийная симфония — пример игрового поля" src="assets/fantasia_symphony.png" style="width:100%;max-width:420px;height:auto;margin:0 auto;display:block;border-radius:16px;border:1px solid #bdd8ea"/>
+</div>
+</section>
+<section class="section" id="recharge">
+<div class="section-head">
+<div class="section-icon">💎</div>
+<h2>Преимущества пополнения</h2>
+</div>
+<div class="section-body">
+<div class="soft-card">
+<h3>Платная часть события</h3>
+<p>Награды за пополнение. Смотрите текущие условия в игре.</p>
+</div>
+</div>
+</section>
+<section class="section" id="greetings">
+<div class="section-head">
+<div class="section-icon">🎁</div>
+<h2>Цветастые приветствия</h2>
+</div>
+<div class="section-body">
+<div class="soft-card">
+<h3>Платные наборы</h3>
+<p>Дополнительные платные наборы события.</p>
+</div>
+</div>
+</section>
+<section class="section" id="shop">
+<div class="section-head">
+<div class="section-icon">🛒</div>
+<h2>Пингвиний магазин</h2>
+</div>
+<div class="section-body">
+<p>Тратим здесь Пингвиньи монеты.</p>
+<div class="dual">
+<div class="soft-card">
+<h3>Приоритет покупок</h3>
+<p>Сначала смотрим ограниченные и редкие предметы.</p>
+</div>
+<div class="soft-card">
+<h3>Важно</h3>
+<p>Не оставляйте монеты после закрытия магазина.</p>
+</div>
+</div>
+</div>
+<div class="soft-card" style="margin-top:18px;text-align:center"><h3>Пример Пингвиньего магазина</h3><img alt="Пингвиний магазин — пример" src="assets/penguin_shop.jpg" style="width:100%;max-width:320px;height:auto;margin:0 auto;display:block;border-radius:16px;border:1px solid #bdd8ea"/></div></section>
+<section class="section" id="loot">
+<div class="section-head">
+<div class="section-icon">⛏</div>
+<h2>Потерянная добыча</h2>
+</div>
+<div class="section-body">
+<p>Лопатами открываем клетки и ищем все предметы с минимальным расходом ходов.</p>
+<div class="stage-grid">
+<div class="stage-card">
+<h3>Этапы 1–10</h3>
+<p>Смотрим на формы и не открываем клетки подряд.</p>
+</div>
+<div class="stage-card">
+<h3>Этапы 11–20</h3>
+<p>Пустые клетки используем, чтобы исключать позиции.</p>
+</div>
+<div class="stage-card">
+<h3>Этапы 21–30</h3>
+<p>Сначала ищем крупные и необычные формы.</p>
+</div>
+<div class="stage-card">
+<h3>Этапы 31–36</h3>
+<p>Копаем только после проверки формы — лишние ходы особенно дороги.</p>
+</div>
+</div>
+<div class="soft-card steps" style="margin-top:18px">
+<h3>Как проходить эффективно</h3>
+<div class="step">Смотрим форму предметов сверху.</div>
+<div class="step">Нашли клетку → определяем направление.</div>
+<div class="step">Пустыми клетками исключаем невозможные позиции.</div>
+<div class="step">Не чистим всё поле — бережём лопаты.</div>
+</div>
+</div>
+<div class="soft-card" style="margin-top:18px">
+<h3>Пример прохождения — этап 7</h3>
+<p>Пример одного этапа: ориентируемся по форме предметов, а не очищаем всё поле.</p>
+<div class="example-gallery">
+<div class="example-card">
+<h3>Пример 1</h3>
+<img alt="Потерянная добыча — этап 7, пример 1" onclick="openExample(this.src)" src="assets/lost_loot_stage7_1.jpg" style="width:100%;max-width:340px;height:auto;margin:0 auto;display:block;border-radius:16px;border:1px solid #bdd8ea;cursor:zoom-in"/>
+</div>
+<div class="example-card">
+<h3>Пример 2</h3>
+<img alt="Потерянная добыча — этап 7, пример 2" onclick="openExample(this.src)" src="assets/lost_loot_stage7_2.jpg" style="width:100%;max-width:340px;height:auto;margin:0 auto;display:block;border-radius:16px;border:1px solid #bdd8ea;cursor:zoom-in"/>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="tips">
+<div class="section-head">
+<div class="section-icon">★</div>
+<h2>Главное правило</h2>
+</div>
+<div class="section-body">
+<div class="soft-card" style="margin-top:18px">
+<p>Нашли клетку → смотрим форму → проверяем только нужные клетки.</p>
+</div>
+</div>
+</section>
+</div>
+<div class="img-modal" id="imgModal" onclick="this.classList.remove('show')">
+</div>
+<script>
+function openExample(src){
+  document.getElementById('imgModalPic').src = src;
+  document.getElementById('imgModal').classList.add('show');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') document.getElementById('imgModal').classList.remove('show');
+});
+</script>
+</body>
+</html>
